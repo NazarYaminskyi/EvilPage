@@ -51,7 +51,7 @@ body {
 
 #overlay span {
   font-family: 'Courier New', monospace; /* Моноширинний, як і анімація */
-  font-size: 3rem;           /* Збільшений розмір (в 3 рази більше стандарту) */
+  font-size: 6rem;           /* Збільшений розмір (в 3 рази більше стандарту) */
   font-weight: bold;         /* Жирний */
   letter-spacing: 5px;       /* Розрядочка між буквами */
   text-transform: uppercase; /* Все великими */
