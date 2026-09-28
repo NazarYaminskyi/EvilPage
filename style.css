@@ -39,28 +39,20 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black; /* Глухий чорний фон */
+  background-color: black; /* Чорний фон заставки */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* На самому верху */
+  z-index: 9999;
   cursor: pointer;
-  color: white; /* Колір тексту за замовчуванням */
 }
 
-
+/* Явно задаємо вигляд і колір тексту всередині overlay */
 #overlay span {
-  font-family: 'Courier New', monospace; /* Моноширинний, як і анімація */
-  font-size: 6rem;           /* Збільшений розмір (в 3 рази більше стандарту) */
-  font-weight: bold;         /* Жирний */
-  letter-spacing: 5px;       /* Розрядочка між буквами */
-  text-transform: uppercase; /* Все великими */
-  text-align: center;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Легке світіння */
-  padding: 20px;
-}
-
-
-body:has(#overlay[style*="display: none"]) #ascii-animation {
-  display: block; /* Показати, коли оверлей приховано */
+  color: #ffffff;          /* Чисто білий колір тексту */
+  font-family: monospace;  /* Моноширинний шрифт у стилі анімації */
+  font-size: 6rem;         /* Розмір тексту */
+  letter-spacing: 2px;     /* Відстань між літерами */
+  border: 1px solid #555;  /* Необов'язково: легка рамка навколо тексту */
+  padding: 12px 20px;
 }
