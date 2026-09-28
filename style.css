@@ -1,58 +1,60 @@
 body {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: black;
+  overflow: hidden;
+}
 
+/* Зменшуємо масштаб ТІЛЬКИ для анімації, щоб не ламати оверлей */
+#ascii-animation {
   zoom: 50%;
+  display: none; /* Приховуємо анімацію повністю до старту */
 }
 
-#ascii-container {
-  display: inline-block;
-  white-space: pre;       /* Зберігає всі пробіли та переноси */
-  font-family: monospace;
-  font-size: 10px;
-  line-height: 1.0;
-  border: 4px 6px solid #333;
-  color: #e0e0e0;
-}
-
-/* Приклад додаткових стилів для ваших span всередині кадру */
+/* Колірні класи для символів */
 .red-char { color: #ff5555; }
 .bright-char { color: #ffffff; font-weight: bold; }
 
-/* Ховаємо всі кадри за замовчуванням */
+/* Керування кадрами */
 .frame {
-  display: none;
+  display: none !important;
 }
 
-/* Показуємо лише активний кадр */
 .frame.active {
-  display: block;
+  display: block !important;
 }
 
+/* Заставка на весь екран без зсувів */
 #overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black; /* Чорний фон заставки */
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 99999;
   cursor: pointer;
 }
 
-/* Явно задаємо вигляд і колір тексту всередині overlay */
+/* Текст заставки */
 #overlay span {
-  color: #ffffff;          /* Чисто білий колір тексту */
-  font-family: monospace;  /* Моноширинний шрифт у стилі анімації */
-  font-size: 6rem;         /* Розмір тексту */
-  letter-spacing: 2px;     /* Відстань між літерами */
-  border: 1px solid #555;  /* Необов'язково: легка рамка навколо тексту */
-  padding: 12px 20px;
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 3rem; /* Трохи зменшено, щоб текст не виходив за межі на мобільних */
+  letter-spacing: 2px;
+  border: 1px solid #555;
+  padding: 16px 28px;
+  text-align: center;
 }
+
+#overlay[style*="display: none"] ~ #ascii-animation,
+#overlay[style*="display: none"] + #ascii-animation {
+  display: block !important;
+  }
