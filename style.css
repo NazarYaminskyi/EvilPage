@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+#ascii-container {
+  display: inline-block;
+  white-space: pre;       /* Зберігає всі пробіли та переноси */
+  font-family: monospace;
+  font-size: 10px;
+  line-height: 1.0;
+  border: 4px 6px solid #333;
+  color: #e0e0e0;
+}
+
+/* Приклад додаткових стилів для ваших span всередині кадру */
+.red-char { color: #ff5555; }
+.bright-char { color: #ffffff; font-weight: bold; }
+
+/* Ховаємо всі кадри за замовчуванням */
+.frame {
+  display: none;
+}
+
+/* Показуємо лише активний кадр */
+.frame.active {
+  display: block;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black; /* Чорний фон заставки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* Явно задаємо вигляд і колір тексту всередині overlay */
+#overlay span {
+  color: #ffffff;          /* Чисто білий колір тексту */
+  font-family: monospace;  /* Моноширинний шрифт у стилі анімації */
+  font-size: 16px;         /* Розмір тексту */
+  letter-spacing: 2px;     /* Відстань між літерами */
+  border: 1px solid #555;  /* Необов'язково: легка рамка навколо тексту */
+  padding: 12px 20px;
+}
