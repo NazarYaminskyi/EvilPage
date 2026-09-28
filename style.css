@@ -5,6 +5,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: black;
+
+  zoom: 50%;
 }
 
 #ascii-container {
